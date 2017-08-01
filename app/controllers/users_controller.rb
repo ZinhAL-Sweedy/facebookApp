@@ -4,15 +4,22 @@ class UsersController < ApplicationController
   before_action :check_if_admin, only: [ :index, :destroy ]
 
   before_action :check_if_logged_in
+
   def follow
     @user = User.find(params[:id])
     if (@user != @current_user)
       @current_user.follow!(@user)
       redirect_to user_path(@current_user)
-  else
-    redirect_to user_path(@current_user)
+    else
+      redirect_to user_path(@current_user)
+    end
   end
+
+  def unlike_comment
+     @user.unlike!(Comment.find params[:id]) # find comment_id
+     redirect_to user_path(@user)
   end
+
   def likes
     @user = @current_user # before_action :authenticate_user, only: [:likes]
     @post = User.find(params[:id])

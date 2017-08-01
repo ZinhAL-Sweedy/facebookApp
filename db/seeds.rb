@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 puts 'Loading Users...'
-u1 = User.create email: 'politisj@gmail.com' , name: 'John Politis' , password: 'chicken', age: '43' ,is_admin:true
-u2 = User.create email: 'matty@gmail.com' , name: 'John' , password: 'chicken', age: '45', is_admin:false
+u1 = User.create email: 'politisj@gmail.com' , name: 'John Politis' ,  password: 'chicken', age: '43' ,is_admin:true
+u2 = User.create email: 'matty@gmail.com' , name: 'Matt Edge' ,        password: 'chicken', age: '45', is_admin:false
+u3 = User.create email: 'textchimp@gmail.com' , name: 'Luke Hammer' ,        password: 'chicken', age: '20', is_admin:false
 
 Post.destroy_all
 puts 'Loading Posts....'
@@ -41,5 +42,11 @@ u2.follow!(p2)
 u2.follow!(u1)
 u1.like!(u2)
 u2.like!(u1)
+
+u1.like!(p1)
+u1.like!(c1)
+u2.like!(p2)
+
+
 #
 # p.followed_by?(u1) # return true or false
