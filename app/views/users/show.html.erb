@@ -1,0 +1,46 @@
+<h2>User Details</h2>
+
+<% if @current_user == @user %>
+  <%= link_to 'Edit profile', edit_user_path(@user) %>
+<% end %>
+
+<p>Email: <%= @user.email %> </p>
+
+<p>Name: <%= @user.name %> </p>
+
+<img src="<%= @user.image %>" alt="">
+
+<!-- <p><u>Followers</u></p> -->
+<ul>
+<%= link_to "follow", follow_user_path(@user) %>
+<p>User Followees <%=@user.name%>: </p>
+<% @user.followees(User).each do |u| %>
+<li><%= link_to u.name,  user_path(u.id) %></li>
+<% end %>
+</ul>
+
+
+<ul>
+<p>User Likes This User <%=@user.name%>: </p>
+<% @user.likers(User).each do |u| %>
+<li><%= link_to u.name, user_path(u.id) %></li>
+<% end %>
+</ul>
+<br>
+<hr>
+<br>
+<%= link_to "Add Friend" %>
+
+<p>Username: <%= @user.name %></p>
+<p><%= link_to "Find Friends", users_path %></p>
+
+
+<h2>Your Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+  <li>
+    <%=  friendship.friend.username %>
+    (<%= link_to "remove", friendship, :method => :delete %>)
+  </li>
+  <% end %>
+</ul>

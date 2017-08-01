@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @comment.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+<strong>Image:</strong>
+
+<% if @comment.image.present? %>
+    <%= cl_image_tag( @comment.image,
+    :width=>400, :aspect_ration=>"2.5", :crop=>"crop" )%>
+<% end %>
+<br>
+<br>
+<!-- <h2>Comment Details</h2>
+    post: <%= @comment.title %> -->
+
+
+<!-- <p>
+  <strong>Image:</strong>
+  <%= @comment.image %>
+</p> -->
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
+<br>
+<%= link_to "Go to comments", comments_path %>
+
+<hr>
+<p>User Followees This comment: </p>
+<% @comment.followers(User).each do |u| %>
+<li><%= link_to u.name,  user_path(u.id) %></li>
+<% end %>
+</ul>
