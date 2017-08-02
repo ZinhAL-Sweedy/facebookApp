@@ -26,18 +26,31 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 <br>
-<ul>
+<ol>
   <hr>
 <p>Users Felowers This Post: <% @post.followers(User).each do |u| %>
 
   <li><%= link_to u.name, post_path(u.id) %></li>
   <% end %>
 </p>
-</ul>
+</ol>
 
-<ul>
+<ol>
 <p>User Likes This Post <%=@post.title%>: </p>
 <% @post.likers(User).each do |u| %>
 <li><%= link_to u.name, user_path(u.id) %></li>
 <% end %>
-</ul>
+</ol>
+
+
+
+<% if @current_user.likes?(@post) %>
+  <%= link_to "unlike", ("/posts/unlike/" + @post.id.to_s) %>
+<% else %>
+
+  <%= link_to "like", ("/posts/like/" + @post.id.to_s) %>
+<% end %>
+
+
+<br>
+total posts who <%= @current_user.name %> who likes:  <%= @post.likers(User).length %>

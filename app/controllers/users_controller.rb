@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 
   before_action :get_user,       only: [ :show, :edit, :update ]
   before_action :check_if_admin, only: [ :index, :destroy ]
-
-  before_action :check_if_logged_in
+  before_action :fetch_user
+  # before_action :check_if_logged_in
 
   def follow
     @user = User.find(params[:id])
@@ -15,10 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def unlike_comment
-     @user.unlike!(Comment.find params[:id]) # find comment_id
-     redirect_to user_path(@user)
-  end
+  # def unlike_comment
+  #    @user.unlike!(Comment.find params[:id]) # find comment_id
+  #    redirect_to user_path(@user)
+  # end
 
   def likes
     @user = @current_user # before_action :authenticate_user, only: [:likes]
@@ -103,12 +103,14 @@ class UsersController < ApplicationController
     end
 
     def show
-
     end
 
     def edit
       # @user = User.find params["id"]   # now in before_action
       # redirect_to root_path unless @current_user == @user
+
+      redirect_to root_path unless @current_user == @user
+
     end
 
     def update
@@ -122,7 +124,7 @@ class UsersController < ApplicationController
       # @user = User.find params["id"]   # now in before_action
     # redirect_to root_path unless @current_user == @user
 
-    @user = @@current_user # makes sure user can only edit their own profile
+    @user = @current_user # makes sure user can only edit their own profile
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       @user.image = req['public_id']

@@ -1,51 +1,85 @@
-<h2>User Details</h2>
-
-<% if @current_user == @user %>
-  <%= link_to 'Edit profile', edit_user_path(@user) %>
-<% end %>
-
-<p>Email: <%= @user.email %> </p>
-
-<p>Name: <%= @user.name %> </p>
-
-<img src="<%= @user.image %>" alt="">
-
-<!-- <p><u>Followers</u></p> -->
-<%= link_to "follow this user", follow_user_path(@user) %>
-<hr>
-<p>Users <%=@user.name%> has friended : </p>
-<ul>
-<% @user.friended.each do |u| %>
-<li><%= link_to u.name,  user_path(u.id) %></li>
-<% end %>
-</ul>
-
-<hr>
-
-
-
-<p>Users who have friended <%=@user.name%> : </p>
-<ul>
-<% @user.friended.each do |u| %>
-<li><%= link_to u.name,  user_path(u.id) %></li>
-<% end %>
-</ul>
-
-
-<hr>
-<p>Comments <%=@user.name%> likes: </p>
-<ul>
-<% @user.liked_comments.each do |u| %>
-
-    <li><%= link_to u.title,  comment_path(u.id) %>   <%= link_to "Unlike" , user_path(unlike_comment) %></li>
-
-
-<% end %>
-</ul>
-
-
-
-<hr>
-
-
-<p><%= link_to "Find Friends", users_path %></p>
+<%= render partial: 'layouts/nav' %>
+<div class="container">
+    <div class="row">
+        <div id="profile" class="col-md-3 hidden-sm hidden-xs">
+            <div id="profile-resume" class="card">
+                <%#= image_tag('/assets/background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
+     <img src="/assets/background-images-13.jpeg" class="card-img-top img-responsive">
+                <div class="card-block">
+                    <%= image_tag('/assets/john3.png' , class: "card-img" )%>
+                    <h4 class="card-title"><%=@user.name%><small><%=@user.email%></small></h4>
+                  
+                    <ul class="list-inline list-unstyled">
+                    <li id="card-tweets">
+                        <a href="#">
+                        <span class="profile-stats">Tweets</span>
+                        <span class="profile-value">99k</span>
+                        </a>
+                    </li>
+                    <li class="card-following">
+                        <a href="#">
+                        <span class="profile-stats">Following</span>
+                        <span class="profile-value">7</span>
+                        </a>
+                    </li>
+                    <li class="card-followers">
+                        <a href="#">
+                        <span class="profile-stats">Followers</span>
+                        <span class="profile-value">132k</span>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div id="main" class="col-sm-12 col-md-6">
+                <div id="main-card" class="card">
+                    <form id="new-message">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="What is happening?">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                            </span>
+                        </div>
+                    </form>
+                    <ul id="feed" class="list-unstyled">
+                        <% @user.posts.each do | comment | %>
+                            <li>
+                                <%= image_tag('/assets/doge.jpg' , class: 'feed-avatar img-circle') %>
+                                <div class="feed-post">
+                                    <h5><%= comment.title%><small>&nbsp;<%=@user.name%> - @namex - 3h</small></h5>
+                                    <hr>
+                                    <p><%= comment.content%></p>
+                                </div>
+                                <div class="action-list">
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                                        <span class="retweet-count">6</span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </li>
+                        <%end%>
+                    </ul>
+                </div>
+                <nav class="text-center">
+                    <ul class="pagination pagination-lg">
+                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="disabled"><a href="#">...</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="right-content" class="col-md-3 hidden-sm hidden-xs"> </div>
+    </div>
+</div>

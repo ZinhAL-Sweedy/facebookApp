@@ -1,13 +1,31 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :fetch_user
   # GET /posts
   # GET /posts.json
-  def likes
-    @user = @current_user # before_action :authenticate_user, only: [:likes]
+  # def likes
+  #   @user = @current_user # before_action :authenticate_user, only: [:likes]
+  #   @post = Post.find(params[:id])
+  #   @user.like!(@post)
+  #   redirect_to :back, notice: "Liked this post successfully!"
+  # end
+
+
+
+
+  def like
     @post = Post.find(params[:id])
-    @user.like!(@post)
-    redirect_to :back, notice: "Liked this post successfully!"
+    @current_user.like!(@post)
+    redirect_to user_path(@current_user.id)
+  end
+  #
+  def unlike
+    @post = Post.find(params[:id])
+    # if @current_user.likees(@comment)
+      @current_user.unlike!(@post)
+    # end
+    redirect_to user_path(@current_user.id)
+
   end
   def get_post
     @post = Post.find params["id"]

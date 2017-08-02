@@ -8,7 +8,7 @@
 User.destroy_all
 puts 'Loading Users...'
 u1 = User.create email: 'politisj@gmail.com' , name: 'John Politis' ,  password: 'chicken', age: '43' ,is_admin:true
-u2 = User.create email: 'matty@gmail.com' , name: 'Matt Edge' ,        password: 'chicken', age: '45', is_admin:false
+u2 = User.create email: 'matty@gmail.com' , name: 'Matt Edge' ,        password: 'chicken', age: '25', is_admin:false
 u3 = User.create email: 'textchimp@gmail.com' , name: 'Luke Hammer' ,        password: 'chicken', age: '20', is_admin:false
 
 Post.destroy_all
@@ -46,6 +46,7 @@ u2.like!(u1)
 u1.like!(p1)
 u1.like!(c1)
 u2.like!(p2)
+
 
 
 #

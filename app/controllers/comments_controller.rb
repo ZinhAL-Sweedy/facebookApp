@@ -4,9 +4,27 @@ class CommentsController < ApplicationController
   before_action :check_if_logged_in, only: [:new, :create, :edit, :update]
 
   before_action :check_if_admin, only: [ :admin_index ]
-
+  before_action :fetch_user
   # GET /comments
   # GET /comments.json
+
+  def like
+    @comment = Comment.find(params[:id])
+    @current_user.like!(@comment)
+    # raise 'hell'
+    redirect_to user_path(@current_user.id)
+  end
+  #
+  def unlike
+    @comment = Comment.find(params[:id])
+    # if @current_user.likees(@comment)
+      @current_user.unlike!(@comment)
+    # end
+    redirect_to user_path(@current_user.id)
+
+  end
+
+
 
   def get_comment
 
@@ -87,9 +105,9 @@ class CommentsController < ApplicationController
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       @comment.image = req['public_id']
-    end
-    @comment.update comment_params
-    redirect_to post_path( @comment.post_id )
+      end
+      @comment.update comment_params
+      redirect_to post_path( @comment.post_id )
   end
 
   # DELETE /comments/1

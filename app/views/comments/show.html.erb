@@ -41,3 +41,13 @@
 <li><%= link_to u.name,  user_path(u.id) %></li>
 <% end %>
 </ul>
+
+<% if @current_user.likes?(@comment) %>
+  <%= link_to "unlike", ("/comments/unlike/" + @comment.id.to_s) %>
+<% else %>
+
+  <%= link_to "like", ("/comments/like/" + @comment.id.to_s) %>
+<% end %>
+
+<br>
+total users who likes:  <%= @comment.likers(User).length %>
