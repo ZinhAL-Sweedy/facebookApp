@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   get '/comments/like/:id' => 'comments#like'
   get '/comments/unlike/:id' => 'comments#unlike'
+  get '/comments/follow/:id' => 'comments#follow'
+  get '/comments/unfollow/:id' => 'comments#unfollow'
 
   get '/posts/like/:id' => 'posts#like'
   get '/posts/unlike/:id' => 'posts#unlike'
-  
+  get '/posts/follow/:id' => 'posts#follow'
+  get '/posts/unfollow/:id' => 'posts#unfollow'
+
   resources :friendships
   resources :comments
   resources :posts

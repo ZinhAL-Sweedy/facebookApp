@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   before_action :check_if_logged_in, only: [:new, :create, :edit, :update]
 
   before_action :check_if_admin, only: [ :admin_index ]
-  before_action :fetch_user
   # GET /comments
   # GET /comments.json
 
@@ -21,9 +20,22 @@ class CommentsController < ApplicationController
       @current_user.unlike!(@comment)
     # end
     redirect_to user_path(@current_user.id)
-
   end
 
+  def follow
+    @comment = Comment.find(params[:id])
+    @current_user.follow!(@comment)
+    redirect_to user_path(@current_user.id)
+  end
+  #
+  def unfolow
+    @commentt = Comment.find(params[:id])
+    # if @current_user.likees(@comment)
+    @current_user.unfollow!(@comment)
+    # end
+    redirect_to user_path(@current_user.id)
+
+  end
 
 
   def get_comment

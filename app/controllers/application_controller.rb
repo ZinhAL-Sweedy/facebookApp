@@ -1,11 +1,24 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :fetch_user
+  before_action :fetch_user, :fetch_comment, :fetch_post
+
 
   private
   def fetch_user
     @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?
     session[:user_id] = nil unless @current_user.present?
+  end
+
+
+  def fetch_comment
+    @current_comment = Comment.find_by :id => session[:comment_id] if session[:comment_id].present?
+    session[:comment_id] = nil unless @current_comment.present?
+  end
+
+
+  def fetch_post
+    @current_post = Post.find_by :id => session[:post_id] if session[:post_id].present?
+    session[:post_id] = nil unless @current_post.present?
   end
 
   def check_if_logged_in

@@ -1,16 +1,18 @@
+<h2>Uder Deatils</h2>
+
 <%= render partial: 'layouts/nav' %>
 <div class="container">
     <div class="row">
-        <div id="profile" class="col-md-3 hidden-sm hidden-xs">
+      <div class="col-md-4">
             <div id="profile-resume" class="card">
                 <%#= image_tag('/assets/background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
-     <img src="/assets/background-images-13.jpeg" class="card-img-top img-responsive">
+       <img src="/assets/background-images-13.jpeg" class="card-img-top img-responsive">
                 <div class="card-block">
                     <%= image_tag('/assets/john3.png' , class: "card-img" )%>
-                    <h4 class="card-title"><%=@user.name%><small><%=@user.email%></small></h4>
-                  
+                    <p4 class="card-title"><%=@user.name%><small><%=@user.email%></small></p4>
+
                     <ul class="list-inline list-unstyled">
-                    <li id="card-tweets">
+                    <!-- <li id="card-tweets">
                         <a href="#">
                         <span class="profile-stats">Tweets</span>
                         <span class="profile-value">99k</span>
@@ -28,11 +30,11 @@
                         <span class="profile-value">132k</span>
                         </a>
                     </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
-            <div id="main" class="col-sm-12 col-md-6">
+        <div class="col-md-4">
                 <div id="main-card" class="card">
                     <form id="new-message">
                         <div class="input-group">
@@ -43,21 +45,25 @@
                         </div>
                     </form>
                     <ul id="feed" class="list-unstyled">
-                        <% @user.posts.each do | comment | %>
+                        <% @user.posts.each do | post | %>
                             <li>
                                 <%= image_tag('/assets/doge.jpg' , class: 'feed-avatar img-circle') %>
                                 <div class="feed-post">
-                                    <h5><%= comment.title%><small>&nbsp;<%=@user.name%> - @namex - 3h</small></h5>
-                                    <hr>
-                                    <p><%= comment.content%></p>
+                                    <h4><%= post.title%><small>&nbsp; by: <%=@user.name%> </small></h4>
+                                    <p><%= post.content%></p>
                                 </div>
                                 <div class="action-list">
-                                    <a href="#">
+                                    <!-- <a href="#">
                                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                                    </a>
+                                    </a> -->
                                     <a href="#">
                                         <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
-                                        <span class="retweet-count">6</span>
+                                        <span class="retweet-count">6
+                                            <a href="posts_path"></a
+                                          <span class="retweet-count"><%= link_to "ALl Posts" , posts_path, class:"btn btn-primary" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                          </span>
+                                        </span>
                                     </a>
                                     <a href="#">
                                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -80,6 +86,62 @@
                 </nav>
             </div>
         </div>
-        <div id="right-content" class="col-md-3 hidden-sm hidden-xs"> </div>
+        <!-- <hr> -->
+        <br>   <br> <br>
+      <!-- <div class="col-md-4"> <%= link_to "follow this user", follow_user_path(@user) %> -->
+
+<!-- <p><u>Followers</u></p> -->
+<%= link_to "follow this user", follow_user_path(@user) %>
+<hr>
+<h3>Users <%=@user.name%> has friended : </h3>
+<ol>
+<% @user.friended.each do |u| %>
+<li><%= link_to u.name,  user_path(u.id) %></li>
+<% end %>
+</ol>
+
+<hr>
+
+
+
+<h3>Users who have friended <%=@user.name%> : </h3>
+<ol>
+<% @user.friended.each do |u| %>
+<li><%= link_to u.name,  user_path(u.id), class:"btn btn-primary" %></li>
+<% end %>
+</ol>
+
+
+<hr>
+<h3>Comments <%=@user.name%> likes: </h3>
+<ol>
+<% @user.liked_comments.each do |u| %>
+
+    <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %></li>
+
+<% end %>
+
+</ol>
+<%= link_to "All Comments" , comments_path, class:"btn btn-primary" %>
+
+
+<h2>Posts <%=@user.name%> likes: </h2>
+<ol>
+<% @user.liked_posts.each do |u| %>
+
+    <li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %></li>
+
+
+<% end %>
+</ol>
+
+<hr>
+
+<%= link_to "ALl Posts" , posts_path, class:"btn btn-primary" %>
+
+
+
+<%= link_to "Find Friends", users_path, class:"btn btn-primary"%>
+</div>
     </div>
 </div>

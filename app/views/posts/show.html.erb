@@ -1,3 +1,6 @@
+<h2>Post Details</h2>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -35,6 +38,27 @@
 </p>
 </ol>
 
+
+
+<!-- <ol>
+<p>User Followees This post:<%=@post.title %> </p>
+<% @post.followers(User).each do |u| %>
+<li><%= link_to u.name,  user_path(u.id) %></li>
+<% end %>
+</ol>
+<br> -->
+<% if @current_user.follows?(@post) %>
+  <%= link_to "unfollow", ("/posts/unfolow/" + @post.id.to_s) %>
+<% else %>
+
+  <%= link_to "follow", ("/posts/follow/" + @post.id.to_s) %>
+<% end %>
+<br>
+
+<hr>
+
+
+
 <ol>
 <p>User Likes This Post <%=@post.title%>: </p>
 <% @post.likers(User).each do |u| %>
@@ -51,6 +75,8 @@
   <%= link_to "like", ("/posts/like/" + @post.id.to_s) %>
 <% end %>
 
-
+<!-- <%= @current_user.name %> who likes:  -->
 <br>
-total posts who <%= @current_user.name %> who likes:  <%= @post.likers(User).length %>
+total posts who likes This post is:  <%= @post.likers(User).length %>
+<br>
+total users who follows the <%= @post.title %> who followers is:  <%= @post.followers(User).length %>

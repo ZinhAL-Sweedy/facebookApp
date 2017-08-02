@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :fetch_user
   # GET /posts
   # GET /posts.json
   # def likes
@@ -9,9 +8,6 @@ class PostsController < ApplicationController
   #   @user.like!(@post)
   #   redirect_to :back, notice: "Liked this post successfully!"
   # end
-
-
-
 
   def like
     @post = Post.find(params[:id])
@@ -23,6 +19,21 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     # if @current_user.likees(@comment)
       @current_user.unlike!(@post)
+    # end
+    redirect_to user_path(@current_user.id)
+
+  end
+
+  def follow
+    @post = Post.find(params[:id])
+    @current_user.follow!(@post)
+    redirect_to user_path(@current_user.id)
+  end
+  #
+  def unfolow
+    @post = Post.find(params[:id])
+    # if @current_user.likees(@comment)
+    @current_user.unfollow!(@post)
     # end
     redirect_to user_path(@current_user.id)
 
@@ -106,8 +117,8 @@ class PostsController < ApplicationController
     #
     # redirect_to posts_path
     @post = Post.find(params[:id])
-       @post.destroy
-redirect_to posts_path
+    @post.destroy
+    redirect_to posts_path
     # @post.destroy
     # respond_to do |format|
     #   format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

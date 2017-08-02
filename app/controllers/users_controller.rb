@@ -2,35 +2,72 @@ class UsersController < ApplicationController
 
   before_action :get_user,       only: [ :show, :edit, :update ]
   before_action :check_if_admin, only: [ :index, :destroy ]
-  before_action :fetch_user
   # before_action :check_if_logged_in
+  # def like
+  #   @post = Post.find(params[:id])
+  #   @current_user.like!(@post)
+  #   redirect_to user_path(@current_user.id)
+  # end
+  # #
+  # def unlike
+  #   @post = Post.find(params[:id])
+  #   # if @current_user.likees(@comment)
+  #     @current_user.unlike!(@post)
+  #   # end
+  #   redirect_to user_path(@current_user.id)
+  #
+  # end
+  # def follow
+  #   @user = User.find(params[:id])
+  #   if (@user != @current_user)
+  #     @current_user.follow!(@user)
+  #     redirect_to user_path(@current_user)
+  #   else
+  #     redirect_to user_path(@current_user)
+  #   end
+  # end
+
+
+    def searchUser
+      @user = User.find(params[:name])
+
+      #  if params[:search].present?
+        @user = User.where(name: 'matty' )
+        redirect_to "/users/#{ @user.id }"
+      # end
+  end
 
   def follow
-    @user = User.find(params[:id])
-    if (@user != @current_user)
-      @current_user.follow!(@user)
-      redirect_to user_path(@current_user)
-    else
-      redirect_to user_path(@current_user)
-    end
+    @post = Post.find(params[:id])
+    @current_user.follow!(@post)
+    redirect_to user_path(@current_user.id)
+  end
+  #
+  def unfolow
+    @post = Post.find(params[:id])
+    # if @current_user.likees(@comment)
+    @current_user.unfollow!(@post)
+    # end
+    redirect_to user_path(@current_user.id)
+
   end
 
   # def unlike_comment
   #    @user.unlike!(Comment.find params[:id]) # find comment_id
   #    redirect_to user_path(@user)
   # end
-
-  def likes
-    @user = @current_user # before_action :authenticate_user, only: [:likes]
-    @post = User.find(params[:id])
-    if (@user != @current_user)
-      @user.like!(@user)
-      redirect_to user_path(@current_user)
-    else
-      redirect_to user_path(@current_user)
-    end
-      # redirect_to :back, notice: "Liked this post successfully!"
-  end
+  #
+  # def likes
+  #   @user = @current_user # before_action :authenticate_user, only: [:likes]
+  #   @post = User.find(params[:id])
+  #   if (@user != @current_user)
+  #     @user.like!(@user)
+  #     redirect_to user_path(@current_user)
+  #   else
+  #     redirect_to user_path(@current_user)
+  #   end
+  #     # redirect_to :back, notice: "Liked this post successfully!"
+  # end
 
   # def on_friendship_created(friendship)
   #   @dee.request_friend(@mac)

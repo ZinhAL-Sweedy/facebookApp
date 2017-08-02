@@ -1,3 +1,5 @@
+<h2>Comment Details</h2>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -36,12 +38,21 @@
 <%= link_to "Go to comments", comments_path %>
 
 <hr>
+<ol>
 <p>User Followees This comment: </p>
 <% @comment.followers(User).each do |u| %>
 <li><%= link_to u.name,  user_path(u.id) %></li>
 <% end %>
-</ul>
+</ol>
+<br>
+<% if @current_user.follows?(@comment) %>
+  <%= link_to "unfollow", ("/comments/unfollow/" + @comment.id.to_s) %>
+<% else %>
 
+  <%= link_to "follow", ("/comments/follow/" + @comment.id.to_s) %>
+<% end %>
+
+<br>
 <% if @current_user.likes?(@comment) %>
   <%= link_to "unlike", ("/comments/unlike/" + @comment.id.to_s) %>
 <% else %>
@@ -50,4 +61,6 @@
 <% end %>
 
 <br>
-total users who likes:  <%= @comment.likers(User).length %>
+total users who likes the  <%= @comment.content %> is:  <%= @comment.likers(User).length %>
+<br>
+total users who follow the <%= @comment.content %> is: <%= @comment.followers(User).length %>
