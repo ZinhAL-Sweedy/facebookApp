@@ -1,40 +1,39 @@
-<h2>Post Details</h2>
+<h1><strong><u>Post Details</u></strong></h1>
 
+<p id="notice"  class="text-capitalize"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
-
-<p>
+<p  class="text-capitalize">
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
 
-<p>
+<p  class="text-capitalize">
   <strong>User:</strong>
   <%= @post.user_id %>
 </p>
 
-<p>
+<p  class="text-capitalize">
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
 
-<p>
-  <strong>image:</strong>
+<p  class="text-capitalize">
+  <h5><strong>Image:</strong></h5>
   <% if @post.image.present? %>
       <%= cl_image_tag( @post.image,
       :width=>400, :aspect_ration=>"2.5", :crop=>"crop" )%>
     <% end %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
 <br>
 <ol>
   <hr>
-<p>Users Felowers This Post: <% @post.followers(User).each do |u| %>
+<p  class="text-capitalize"><strong><u>Users Felowers This Post: <% @post.followers(User).each do |u| %>
 
-  <li><%= link_to u.name, post_path(u.id) %></li>
+  <li><%= link_to u.name, post_path(u.id), class:"text-capitalize" %></li>
   <% end %>
+</u></strong>
 </p>
 </ol>
 
@@ -60,10 +59,11 @@
 
 
 <ol>
-<p>User Likes This Post <%=@post.title%>: </p>
+<p  class="text-capitalize"><strong><u>User Likes This Post <%=@post.title%> is:
 <% @post.likers(User).each do |u| %>
 <li><%= link_to u.name, user_path(u.id) %></li>
 <% end %>
+</u></strong> </p>
 </ol>
 
 
@@ -77,6 +77,12 @@
 
 <!-- <%= @current_user.name %> who likes:  -->
 <br>
-total posts who likes This post is:  <%= @post.likers(User).length %>
+<p  class="text-capitalize"><strong><u>total posts who follow the <%= @post.title %> is:  <%= @post.likers(User).length %></u></strong></p>
 <br>
-total users who follows the <%= @post.title %> who followers is:  <%= @post.followers(User).length %>
+<p  class="text-capitalize"><strong><u>total users who follows the <%= @post.title %> who followers is:  <%= @post.followers(User).length %></u></strong></p>
+
+
+
+
+<%= link_to 'Edit', edit_post_path(@post), class:"btn btn-info"%>
+<%= link_to 'Back', posts_path, class:"btn btn-info" %>

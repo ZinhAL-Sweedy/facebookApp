@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
   def index
-    @comments = Comment.where user_id: params["user_id"]
+    @comments = Comment.all
   end
 
 
@@ -58,6 +58,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+
   end
 
   # GET /comments/1/edit
@@ -69,11 +70,13 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
 
-      cont = params["content"]
-      user_id = params["user_id"]
+      cont = params["comment"]["content"]
+      user_id = @current_user.id
+      title = params["comment"]["title"]
       post_id = params["post_id"]
 
-      @comment = Comment.new content:cont, user_id:user_id, user_id:@current_user.id
+      @comment = Comment.new content:cont, user_id:user_id, title:title, post_id:post_id
+
 
 
       if params[:file].present?
@@ -81,7 +84,7 @@ class CommentsController < ApplicationController
         @comment.image = req['public_id']
 
       else
-        @comment.image = "v1499518624/sljlppoeqzc8tmcwylrq.jpg"
+        @comment.image = "itykdos1v3hhivwnmdxz"
 
       end
       @comment.post_id = params["post_id"]
@@ -89,7 +92,7 @@ class CommentsController < ApplicationController
       @comment.user_id = @current_user.id
 
       if @comment.save
-        redirect_to post_path( params["post_id"] )
+        redirect_to comment_path(@comment)
       end
     # respond_to do |format|
     #   if @comment.save

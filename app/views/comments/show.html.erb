@@ -1,27 +1,29 @@
-<h2>Comment Details</h2>
+<h2><strong><u>Comment Details</strong></u></h2>
 
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="text-capitalize">
   <strong>Title:</strong>
   <%= @comment.title %>
 </p>
 
-<p>
+<p class="text-capitalize">
   <strong>User:</strong>
   <%= @comment.user_id %>
 </p>
 
-<p>
+<p class="text-capitalize">
   <strong>Content:</strong>
   <%= @comment.content %>
 </p>
+<p class="text-capitalize">
 <strong>Image:</strong>
 
 <% if @comment.image.present? %>
     <%= cl_image_tag( @comment.image,
     :width=>400, :aspect_ration=>"2.5", :crop=>"crop" )%>
 <% end %>
+</p>
 <br>
 <br>
 <!-- <h2>Comment Details</h2>
@@ -32,17 +34,16 @@
   <strong>Image:</strong>
   <%= @comment.image %>
 </p> -->
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
-<br>
-<%= link_to "Go to comments", comments_path %>
+
 
 <hr>
 <ol>
-<p>User Followees This comment: </p>
+<p class="text-capitalize"><strong><u>>User Followers This comment: </p>
 <% @comment.followers(User).each do |u| %>
-<li><%= link_to u.name,  user_path(u.id) %></li>
+<li><%= link_to u.name,  user_path(u.id), class:"text-capitalize"  %></li>
 <% end %>
+</u></strong>
+</p>
 </ol>
 <br>
 <% if @current_user.follows?(@comment) %>
@@ -61,6 +62,31 @@
 <% end %>
 
 <br>
-total users who likes the  <%= @comment.content %> is:  <%= @comment.likers(User).length %>
+<ol>
+<p  class="text-capitalize"><strong><u>
+total users who likes the  <%= @comment.title %> is:</u></strong> </p>
+  <!-- <%= @comment.likers(User).length %> -->
+  <% @comment.likers(User).each do |u| %>
+  <li><%= link_to u.name, user_path(u.id) %></li>
+  <% end %>
+  </u></strong> </p>
+</ol>
+
+<% if @current_user.likes?(@comment) %>
+  <%= link_to "unlike", ("/comment/unlike/" + @comment.id.to_s) %>
+<% else %>
+
+  <%= link_to "like", ("/comments/like/" + @comment.id.to_s) %>
+<% end %>
+
+
 <br>
-total users who follow the <%= @comment.content %> is: <%= @comment.followers(User).length %>
+<p  class="text-capitalize"><strong><u>total users who follow the <%= @comment.title %> is: <%= @comment.followers(User).length %></u></strong></p>
+
+
+
+
+<%= link_to 'Edit', edit_comment_path(@comment), class:"btn btn-info" %> |
+<%= link_to 'Back', comments_path, class:"btn btn-info" %>
+<br>
+<!-- <%= link_to "Go to comments", comments_path %> -->

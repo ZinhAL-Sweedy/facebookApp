@@ -1,24 +1,34 @@
+<div class="form-group">
+  <%= form_for @post, html: {multipart: true} do |f| %>
+  <div class="form-group">
 
-<%= form_for @post, html: {multipart: true} do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+    <br>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %>
-  <br>
-
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <br>
-
-  <%= f.label :image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, for:"exampleInputEmail1"%>
+    <%= f.text_field :content %>
+    <br>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+  </div>
   <%#= f.text_field :image %>
-  <%= f.cl_image_upload :image %>
+  <%= f.cl_image_upload :image%>
   <br>
+  <div class="btn btn-primary">
+    <%= f.submit  class:"btn btn-info"  %>
 
-  <%= f.submit %>
+  </div>
 
+</div>
 <% end %>
+<br>
+<br>

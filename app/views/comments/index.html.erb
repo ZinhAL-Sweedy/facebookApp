@@ -1,33 +1,41 @@
+<%= link_to 'New Commentt', new_comment_path, class:"btn btn-info" %>
+
+<table class="table table-bordered">
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Comments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<thead>
+  <tr class="info table table-hove">
+
+    <th class="info">Title</th>
+    <th class="info">User</th>
+    <th class="info">Post</th>
+    <th class="info">Content</th>
+    <th class="info">Image</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+
 
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.title %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.content %></td>
-        <td><%= comment.image %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="info"><%= comment.title %></td>
+        <td class="info"><%= comment.user_id %></td>
+        <td class="info"><%= comment.post_id %></td>
+        <td class="info"><%= comment.content %></td>
+        <td class="info"><%= image_tag(comment.image, :alt => "comment image")%> </td>
+
+        <td><%= link_to 'Show', comment, class:"btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment), class:"btn btn-info" %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-info" %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+  <br>
+  </table>

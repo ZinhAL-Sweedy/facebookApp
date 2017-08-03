@@ -12,11 +12,12 @@ class PostsController < ApplicationController
 
   def searchPost
 
-  if params[:title].present?
-        @post = User.where(title:params[:title]).first
+  # if params[:title].present?
+    raise 'hell'
+        @post = Post.where(title:params[:title]).first
         # raise 'hell'
         redirect_to user_path(@post.id)
-    end
+    # end
   end
   def like
     @post = Post.find(params[:id])
@@ -89,7 +90,7 @@ class PostsController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       @post.image = req['public_id']
     else
-      @post.image = "v1499518624/sljlppoeqzc8tmcwylrq.jpg"
+      @post.image = "itykdos1v3hhivwnmdxz"
     end
 
     @post.user_id = @current_user.id

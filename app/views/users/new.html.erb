@@ -1,5 +1,4 @@
-<h2>Create Account</h2>
-
+<h1><strong>Create User Account</strong></h1>
 <% if @user.errors.any? %>
 <ol>
   <% @user.errors.full_messages.each do |msg| %>
@@ -8,4 +7,5 @@
 </ol>
 <% end %>
 
-<%= render partial: 'form' %>
+<%= render partial: 'form', user: @user %>
+<%= link_to 'Back', users_path, class:"btn btn-info" %>

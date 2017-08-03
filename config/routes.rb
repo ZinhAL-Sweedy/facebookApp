@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/searchUser' => 'users#searchUser'
   get '/searchPost' => 'posts#searchPost'
+  post '/searchPost' => 'posts#searchPost'
   get '/comments/like/:id' => 'comments#like'
   get '/comments/unlike/:id' => 'comments#unlike'
   get '/comments/follow/:id' => 'comments#follow'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get     '/login' => 'session#new'       # login form
   post    '/login' => 'session#create'   # check credentials & attempt login (set session)
   delete  '/login' => 'session#destroy'  # logout (destroy session)
-  # resources :users
+  resources :users
 
 
   resources :users do

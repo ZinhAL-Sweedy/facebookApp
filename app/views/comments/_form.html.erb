@@ -1,22 +1,45 @@
+<div class="form-group">
   <%= form_for @comment, html: {multipart: true} do |f| %>
+  <div class="form-group">
 
     <%= f.label :title %>
     <%= f.text_field :title %>
     <br>
+      </div>
     <%= f.label :content %>
     <%= f.text_field :content %>
     <br>
+    <div class="form-group">
     <%= f.label :post_id %>
-    <%= f.text_field :post_id %>
-    <br>
+    <!-- <%= f.text_field :post_id %> -->
+  </div>
+  <!-- <div class="form-group">
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div> --> -->
+
+  <div class="form-group">
+
     <%= f.label :user_id %>
     <%= f.text_field :user_id %>
     <br>
-
+  </div>
+  <div class="form-group">
     <%= f.label :image %>
+  </div>
+  <div class="btn btn-primary">
     <%= f.cl_image_upload :image %>
+  </div>
     <br>
+    <div class="btn btn-primary">
+      <%= f.submit  class:"btn btn-info"  %>
 
-    <%= f.submit %>
-
-  <% end %>
+    </div>
+</div>
+<% end %>

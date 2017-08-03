@@ -1,9 +1,49 @@
 <h2>Users Index</h2>
+<%= link_to 'New User', new_user_path, class:"btn btn-info" %>
 
-<ul>
+<table class="table table-bordered">
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Users List</h1>
+
+<!-- <table> -->
+  <thead>
+    <tr class="info table table-hove">
+
+      <th class="info">User Name</th>
+      <th class="info">User Email</th>
+      <th class="info">User Age</th>
+      <th class="info">Image</th>
+      <th class="info">Is Admin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+<!-- <ol> -->
   <% @users.each do |u| %>
     <li>
       <%= link_to u.name, user_path(u.id) %>
     </li>
   <% end %>
-</ul>
+<!-- </ul> -->
+
+
+<tr>
+
+  <td class="info"><%= post.title %></td>
+  <td class="info"><%= post.user_id %></td>
+  <td class="info"><%= post.content %></td>
+  <td class="info"><%= image_tag(post.image, :alt => "user image")%> </td>
+  <td class="info"><%= link_to 'Show', post, class:"btn btn-info"  %></td>
+  <td class="info"><%= link_to 'Edit', edit_post_path(post), class:"btn btn-info"  %></td>
+  <td class="info"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-info" %></td>
+</tr>
+<% end %>
+</tbody>
+
+<br>
+</table>

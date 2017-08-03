@@ -17,8 +17,8 @@
     <%= link_to 'Login', login_path, class: "btn btn-primary btn-lg btn-block" %>  <%= link_to 'Signup', new_user_path, class: "btn btn-primary btn-lg btn-block"%>
   <% else %>
     <p>
-      <h3>Welcome, <%= link_to @current_user.name, user_path(@current_user) %> |
-      <%= link_to 'Logout', login_path, method: :delete %></h3>
+      <h3><strong>Welcome, <%= link_to @current_user.name, user_path(@current_user) %> |
+      <%= link_to 'Logout', login_path, method: :delete %></h3></strong>
     </p>
     <%= render partial: 'layouts/nav' %>
   <% end %>
