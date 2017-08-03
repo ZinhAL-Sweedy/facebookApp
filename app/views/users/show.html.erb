@@ -40,10 +40,20 @@
         <div id="main-card" class="card">
           <form id="new-message">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="What is happening?">
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-              </span>
+              <!-- <input type="text" class="form-control" placeholder="What is happening?"> -->
+
+              <div class="search_form  ">
+              <%= form_tag("/searchPost", method: "get") do %>
+              <%= label_tag(:post, "") %>
+              <%= text_field_tag(:post,:"", placeholder: "Search Post", :class => 'searchfield') %>
+              <%= image_submit_tag("search", :class => 'mag')%>
+
+   <% end %>
+
+      </div>
+              <!-- <span class="input-group-addon">
+               <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+              </span> -->
             </div>
           </form>
           <ul id="feed" class="list-unstyled">
@@ -62,17 +72,18 @@
                 <!-- <a href="#">
                                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
                                     </a> -->
-                <a href="#">
-                  <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                <!-- <a href="#"> -->
+                  <span class="glyphicon glyphicon-thumb-img"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpzrp-W0R3apoNZbqMdb7zx9C7oQE9R5Qe9BDoesN2NDE3mQ8q8Q" aria-hidden="true"></span>
                   <span class="retweet-count"><%= post.likers(User).length %>
-                    <a href="posts_path"></a <span class="retweet-count"><%= link_to "ALl Posts" , posts_path, class:"btn btn-primary" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="posts_path"></a <span class="btn btn-primary"><%= link_to "All Comments" , comments_path, class:"btn btn-primary" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   </span>
                 </span>
-              </a>
-              <a href="#">
+              <!-- </a> -->
+              <!-- <a href=""> -->
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%= post.followers(User).length %>
-              </a>
+              <!-- </a> -->
             </div>
           </li>
           <%end%>
@@ -111,12 +122,12 @@
       </nav>
     </div>
     <div class="col-md-4">
-    <%= link_to "follow this user", follow_user_path(@user) %>
+    <h3>  <%= link_to "follow this user", follow_user_path(@user) %></h3>
     <hr>
-    <h3>Users
+    <!-- <h3>Users
       <%=@user.name%>
-      has friended :
-    </h3>
+      has friended:
+    </h3> -->
     <ol>
       <% @user.friended.each do |u| %>
       <li><%= link_to u.name,  user_path(u.id) %></li>
@@ -131,7 +142,8 @@
     </h3>
     <ol>
       <% @user.friended.each do |u| %>
-      <li><%= link_to u.name,  user_path(u.id), class:"btn btn-primary" %></li>
+      <li><%= link_to u.name,  user_path(u.id), class:"btn btn-primary" %><%= link_to image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %> </li>
+
       <% end %>
     </ol>
 
@@ -143,7 +155,7 @@
     <ol>
       <% @user.liked_comments.each do |u| %>
 
-      <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %></li>
+      comment title: <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %></li>
 
       <% end %>
 
@@ -157,16 +169,16 @@
     <ol>
       <% @user.liked_posts.each do |u| %>
 
-      <li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %></li>
+      post title:<li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %></li>
 
       <% end %>
     </ol>
 
     <hr>
 
-    <%= link_to "ALl Posts" , posts_path, class:"btn btn-primary" %>
+    <!-- <%= link_to "ALl Comments" , comments_path, class:"btn btn-primary" %> -->
 
-    <%= link_to "Find Friends", users_path, class:"btn btn-primary"%>
+    <!-- <%= link_to "Find Friends", users_path, class:"btn btn-primary"%> -->
   </div>
   </div> <!-- row  -->
   <!-- <hr> -->

@@ -9,12 +9,21 @@ class PostsController < ApplicationController
   #   redirect_to :back, notice: "Liked this post successfully!"
   # end
 
+
+  def searchPost
+
+  if params[:title].present?
+        @post = User.where(title:params[:title]).first
+        # raise 'hell'
+        redirect_to user_path(@post.id)
+    end
+  end
   def like
     @post = Post.find(params[:id])
     @current_user.like!(@post)
     redirect_to user_path(@current_user.id)
   end
-  #
+
   def unlike
     @post = Post.find(params[:id])
     # if @current_user.likees(@comment)

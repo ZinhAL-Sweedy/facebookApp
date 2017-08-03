@@ -223,7 +223,12 @@
 //     padding-bottom: 3rem;
 // }
 
-
+.thumb-img{
+   object-fit: cover;
+   overflow: hidden;
+   height: 30vw;
+   width : 30vw;
+}  
 
 
 

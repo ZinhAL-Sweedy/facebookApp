@@ -1,0 +1,269 @@
+/* line 230, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-brand img {
+  height: 100%;
+}
+
+/* line 234, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+nav form#search {
+  float: right;
+  padding: 0.5em;
+}
+
+/* line 239, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+nav form#search .glyphicon-search {
+  z-index: 99;
+  position: absolute;
+  right: 0.7em;
+  top: 50%;
+  margin-top: -0.44em;
+}
+
+/* line 247, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+nav form#search .input-group .form-control {
+  border-radius: 0.25em;
+}
+
+/* line 251, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+#nav-options {
+  margin: 0.5em;
+}
+
+/* line 255, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+#nav-options button.thumbnail {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 259, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+#nav-options img {
+  max-height: 2.3em;
+  border-radius: 0.3em;
+}
+
+/* line 264, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+#tweet {
+  margin: 0.5em;
+}
+
+/* line 268, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-default {
+  background-color: #2F92CA;
+}
+
+/*
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #FFF;
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}*/
+/* line 283, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-default .navbar-nav > .active > a {
+  background-color: transparent;
+  color: #FFF;
+  padding-bottom: 0.62em;
+  border-bottom: 0.45em solid #FFF;
+}
+
+/* line 288, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #F3F3F3;
+  padding-bottom: 0.62em;
+  border-bottom: 0.45em solid #F3F3F3;
+}
+
+/* line 296, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-nav .badge {
+  color: #2F92CA;
+  background-color: #FFF;
+  font-size: 0.7em;
+  padding: 0.27rem 0.55rem 0.2rem 0.4rem;
+  position: absolute;
+  left: 0.37rem;
+  top: 0.7rem;
+  z-index: 99;
+  border: 0.2rem solid #2F92CA;
+}
+
+/* line 308, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+navbar-header .navbar-toggle, .navbar-default .navbar-toggle:focus {
+  background-color: #57A5D2;
+}
+
+/* line 312, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-default .navbar-toggle:hover {
+  background-color: #3986B3;
+}
+
+/* line 316, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFF;
+}
+
+@media (max-width: 34em) {
+  /* line 321, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+  .navbar-default .navbar-nav > .active > a {
+    border-bottom: none;
+    border-left: 0.45em solid #FFF;
+    padding-left: 0.5em;
+  }
+}
+/* line 328, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+body {
+  padding-top: 4em;
+  background-color: #F5F8FA;
+}
+
+/* line 333, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card {
+  position: relative;
+  border: 0.1rem solid #e5e5e5;
+  border-radius: 0.4rem;
+  position: relative;
+  background-color: #FFF;
+}
+
+/* line 341, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block img.card-img {
+  top: 50%;
+  margin-top: -36px;
+  width: 72px;
+  border: 3px solid #FFF;
+  border-radius: 0.4rem;
+  float: left;
+  position: relative;
+  z-index: 99;
+}
+
+/* line 351, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block .card-title {
+  float: left;
+  margin: 0;
+  margin-left: 0.5em;
+}
+
+/* line 356, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block .card-title small {
+  display: block;
+}
+
+/* line 359, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block .card-text {
+  clear: both;
+  padding-top: 0.25em;
+  margin-bottom: 1.5em;
+}
+
+/* line 365, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block ul a:hover {
+  text-decoration: none;
+}
+
+/* line 368, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block ul .profile-stats {
+  color: #777;
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.63em;
+}
+
+/* line 374, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+.card-block ul .profile-value {
+  color: #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2F92CA;
+}
+
+/* line 380, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ol {
+  list-style: none;
+}
+
+/* line 383, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+form#new-message {
+  border-radius: 0.4rem 0.4rem 0 0;
+  padding: 1em;
+  border-bottom: 0.1em solid #CEE4F5;
+  background-color: #EBF4FB;
+}
+
+/* line 389, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+form#new-message .input-group-addon {
+  background-color: #FFF;
+}
+
+/* line 393, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed {
+  margin: 0;
+}
+
+/* line 397, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed li {
+  padding: 1em 1em;
+  border-bottom: 0.1rem solid #e5e5e5;
+}
+
+/* line 402, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed li:last-child {
+  border-bottom: none;
+}
+
+/* line 406, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .feed-avatar {
+  width: 13%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 412, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .feed-post {
+  width: 80%;
+  display: inline-block;
+  margin-left: 2%;
+}
+
+/* line 418, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .feed-post h5 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* line 423, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .feed-post h5 > small {
+  font-size: 1.2rem;
+}
+
+/* line 427, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .action-list {
+  margin-left: 13%;
+  padding-left: 1em;
+}
+
+/* line 432, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .action-list a {
+  width: 15%;
+  display: inline-block;
+}
+
+/* line 437, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .action-list a:hover {
+  text-decoration: none;
+}
+
+/* line 441, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+ul#feed .action-list .retweet-count {
+  padding-left: 0.2em;
+  font-weight: bold;
+}
+
+/* line 446, /Users/zinh/wdi/projects/finalProject/facebookApp/app/assets/stylesheets/user.scss */
+section#contact form {
+  padding-top: 9rem;
+  padding-bottom: 3rem;
+}

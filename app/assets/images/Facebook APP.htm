@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:3000/users/36 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Facebook APP</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="MySkgcWEFTxGhfD5j/WBkbtx42ZsRpl/tp6qgvraPN9HRVc5NsJ5Sj3Rl03KliR/tj98OsjcVYRYDkSsUJcumQ==">
+
+    <link rel="stylesheet" media="all" href="./Facebook APP_files/bootstrap-theme.self-46aa0d625281d56889ad09085c55709afc0af4816a41aa852cda86d6f120a86c.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/bootstrap.self-b7c515252a327a1dc050a148a1f0753a07f2624ef8291b9c86dd959194bfb848.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/scaffolds.self-d77f9826814a0ddd9fe99c5ebc98d4804544e6ff8666fa24ea5c0dba2bf99b5e.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/user.self-bd8665f4a67351c1ba637960bdc402b43d8752404c24891376b2d5e60db03a80.css">
+<link rel="stylesheet" media="all" href="./Facebook APP_files/application.self-af04b226fd7202dfc532ce7aedb95a0128277937e90d3b3a3d35e1cce9e16886.css">
+    <script src="./Facebook APP_files/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js"></script>
+<script src="./Facebook APP_files/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js"></script>
+<script src="./Facebook APP_files/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js"></script>
+<script src="./Facebook APP_files/action_cable.self-5454023407ffec0d29137c7110917e1e745525ae9afbc05f52104c4cd6597429.js"></script>
+<script src="./Facebook APP_files/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js"></script>
+<script src="./Facebook APP_files/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Facebook APP_files/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Facebook APP_files/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Facebook APP_files/session.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Facebook APP_files/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Facebook APP_files/application.self-f571b9db02bf4ed04c38a6a29072ac382f7d4f47db1fab9817aeadb0d8665235.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook APP</title>
+
+  </head>
+  <body>
+
+  <nav>
+    <p>
+      </p><h3>Welcome, <a href="http://localhost:3000/users/36">John Politis</a> |
+      <a rel="nofollow" data-method="delete" href="http://localhost:3000/login">Logout</a></h3>
+    <p></p>
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://localhost:3000/users/webapp.html">
+                <img class="img-responsive" src="./Facebook APP_files/facebooklogo.png" alt="Facebooklogo">
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div id="nav-menu" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="http://localhost:3000/">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                       Home
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#">
+                        <span class="badge">5</span>
+                        <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                        Notifications
+                    </a>
+                </li> -->
+                <!-- <li>
+                <a href="#">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                         Messages
+                  </a>
+                </li> -->
+            </ul>
+
+            <div id="nav-options" class="btn-group pull-right hidden-xs">
+
+                <button id="tweet" class="btn btn-default pull-right " data-toggle="modal" data-target="#tweet-modal">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Post
+                </button>
+
+                <button type="button" class="btn btn-default dropdown-togglethumbnail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./Facebook APP_files/220px-George_Clooney_2016.jpg" alt="220px george clooney 2016">
+                </button>
+
+                <ul class="dropdown-menu">
+                          <li><a href="http://localhost:3000/users/36/edit">Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                      <li><a rel="nofollow" data-method="delete" href="http://localhost:3000/login">Logout</a></li>
+                </ul>
+            </div>
+
+                </div>
+
+                <div class="search_form">
+                <form action="http://localhost:3000/searchUser" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" value="" placeholder="Search user" class="searchfield">
+                <input alt="Search" type="image" src="./Facebook APP_files/search" class="mag">
+
+</form>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">New Post </h4>
+            </div>
+            <div class="modal-body"></div>
+                  <form class="new_post" id="new_post" action="http://localhost:3000/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="MySkgcWEFTxGhfD5j/WBkbtx42ZsRpl/tp6qgvraPN9HRVc5NsJ5Sj3Rl03KliR/tj98OsjcVYRYDkSsUJcumQ==">
+
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="post_title">Title</label>
+                      <div class="col-sm-10">
+                          <input class="form-control" type="text" name="post[title]" id="post_title">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="post_content">Content</label>
+                      <div class="col-sm-10">
+                          <textarea class="form-control" name="post[content]" id="post_content"></textarea>
+                      </div>
+                  </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Create Post">
+                    </div>
+</form>        </div>
+    </div>
+</div>
+
+  </nav>
+    <h2>Uder Deatils</h2>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://localhost:3000/users/webapp.html">
+                <img class="img-responsive" src="./Facebook APP_files/facebooklogo.png" alt="Facebooklogo">
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div id="nav-menu" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="http://localhost:3000/">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                       Home
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#">
+                        <span class="badge">5</span>
+                        <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                        Notifications
+                    </a>
+                </li> -->
+                <!-- <li>
+                <a href="#">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                         Messages
+                  </a>
+                </li> -->
+            </ul>
+
+            <div id="nav-options" class="btn-group pull-right hidden-xs">
+
+                <button id="tweet" class="btn btn-default pull-right " data-toggle="modal" data-target="#tweet-modal">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Post
+                </button>
+
+                <button type="button" class="btn btn-default dropdown-togglethumbnail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./Facebook APP_files/220px-George_Clooney_2016.jpg" alt="220px george clooney 2016">
+                </button>
+
+                <ul class="dropdown-menu">
+                          <li><a href="http://localhost:3000/users/36/edit">Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                      <li><a rel="nofollow" data-method="delete" href="http://localhost:3000/login">Logout</a></li>
+                </ul>
+            </div>
+
+                </div>
+
+                <div class="search_form">
+                <form action="http://localhost:3000/searchUser" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" value="" placeholder="Search user" class="searchfield">
+                <input alt="Search" type="image" src="./Facebook APP_files/search" class="mag">
+
+</form>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">New Post </h4>
+            </div>
+            <div class="modal-body"></div>
+                  <form class="new_post" id="new_post" action="http://localhost:3000/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="MySkgcWEFTxGhfD5j/WBkbtx42ZsRpl/tp6qgvraPN9HRVc5NsJ5Sj3Rl03KliR/tj98OsjcVYRYDkSsUJcumQ==">
+
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="post_title">Title</label>
+                      <div class="col-sm-10">
+                          <input class="form-control" type="text" name="post[title]" id="post_title">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="post_content">Content</label>
+                      <div class="col-sm-10">
+                          <textarea class="form-control" name="post[content]" id="post_content"></textarea>
+                      </div>
+                  </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Create Post">
+                    </div>
+</form>        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div id="profile-resume" class="card">
+        <img src="./Facebook APP_files/background-images-13.jpeg" class="card-img-top img-responsive">
+        <div class="card-block">
+          <img class="card-img" src="./Facebook APP_files/220px-George_Clooney_2016.jpg" alt="220px george clooney 2016">
+          <p4 class="card-title">John Politis
+            <small>politisj@gmail.com</small>
+          </p4>
+
+          <ul class="list-inline list-unstyled">
+            <!-- <li id="card-tweets">
+                        <a href="#">
+                        <span class="profile-stats">Tweets</span>
+                        <span class="profile-value">99k</span>
+                        </a>
+                    </li>
+                    <li class="card-following">
+                        <a href="#">
+                        <span class="profile-stats">Following</span>
+                        <span class="profile-value">7</span>
+                        </a>
+                    </li>
+                    <li class="card-followers">
+                        <a href="#">
+                        <span class="profile-stats">Followers</span>
+                        <span class="profile-value">132k</span>
+                        </a>
+                    </li>
+                    </ul> -->
+          </ul></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="main-card" class="card">
+          <form id="new-message">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="What is happening?">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+              </span>
+            </div>
+          </form>
+          <ul id="feed" class="list-unstyled">
+            <li>
+              <img class="feed-avatar img-circle" src="./Facebook APP_files/220px-George_Clooney_2016.jpg" alt="220px george clooney 2016">
+              <div class="feed-post">
+                <h4>fisrt post
+                  <small>&nbsp; by:
+                    John Politis
+                  </small>
+                </h4>
+                <p>testing post1</p>
+              </div>
+              <div class="action-list">
+                <!-- <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </a> -->
+                <a href="http://localhost:3000/users/36#">
+                  <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                  <span class="retweet-count">1
+                    </span></a><a href="http://localhost:3000/users/posts_path"></a><a class="btn btn-primary" href="http://localhost:3000/comments">All Comments</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  
+                
+              
+              <!-- <a href=""> -->
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>2
+              <!-- </a> -->
+            </div>
+          </li>
+            <li>
+              <img class="feed-avatar img-circle" src="./Facebook APP_files/sljlppoeqzc8tmcwylrq.jpg" alt="Sljlppoeqzc8tmcwylrq">
+              <div class="feed-post">
+                <h4>new
+                  <small>&nbsp; by:
+                    John Politis
+                  </small>
+                </h4>
+                <p>jnsa
+</p>
+              </div>
+              <div class="action-list">
+                <!-- <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </a> -->
+                <a href="http://localhost:3000/users/36#">
+                  <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                  <span class="retweet-count">0
+                    </span></a><a href="http://localhost:3000/users/posts_path"></a><a class="btn btn-primary" href="http://localhost:3000/comments">All Comments</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  
+                
+              
+              <!-- <a href=""> -->
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>0
+              <!-- </a> -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <nav class="text-center">
+        <ul class="pagination pagination-lg">
+          <li class="disabled">
+            <a href="http://localhost:3000/users/36#" aria-label="Previous">
+              <span aria-hidden="true">«</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="http://localhost:3000/users/36#">1
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/users/36#">2</a>
+          </li>
+          <li class="disabled">
+            <a href="http://localhost:3000/users/36#">...</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/users/36#">3</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/users/36#">4</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/users/36#" aria-label="Next">
+              <span aria-hidden="true">»</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-4">
+    <h3>  <a href="http://localhost:3000/users/36/follow">follow this user</a></h3>
+    <hr>
+    <h3>Users
+      John Politis
+      has friended:
+    </h3>
+    <ol>
+      <li><a href="http://localhost:3000/users/37">Matt Edge</a></li>
+    </ol>
+
+    <hr>
+
+    <h3>Users who have friended
+      John Politis
+      :
+    </h3>
+    <ol>
+      <li><a class="btn btn-primary" href="http://localhost:3000/users/37">Matt Edge</a><a class="img-rounded" width="304" height="236" href="http://localhost:3000/users/37"><img></a> </li>
+
+    </ol>
+
+    <hr>
+    <h3>Comments
+      John Politis
+      likes:
+    </h3>
+    <ol>
+
+      <li><a class="btn btn-primary" href="http://localhost:3000/comments/35">fisrt comment</a></li>
+
+
+    </ol>
+    <a class="btn btn-primary" href="http://localhost:3000/comments">All Comments</a>
+
+    <h2>Posts
+      John Politis
+      likes:
+    </h2>
+    <ol>
+
+      <li><a class="btn btn-primary" href="http://localhost:3000/posts/35">fisrt post</a></li>
+
+    </ol>
+
+    <hr>
+
+    <a class="btn btn-primary" href="http://localhost:3000/comments">ALl Comments</a>
+
+    <a class="btn btn-primary" href="http://localhost:3000/users">Find Friends</a>
+  </div>
+  </div> <!-- row  -->
+  <!-- <hr> -->
+  <br>
+  <br>
+  <br>
+  <!--  <a href="/users/36/follow">follow this user</a> -->
+
+  <!-- <p><u>Followers</u></p> -->
+
+</div>
+
+
+
+
+
+
+<!-- | -->
+    <!-- <a class="btn btn-default" href="#" role="button"> HELLO </a> -->
+  
+
+</body></html>
