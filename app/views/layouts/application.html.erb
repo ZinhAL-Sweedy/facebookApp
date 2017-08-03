@@ -14,7 +14,7 @@
 
   <nav>
   <% unless @current_user.present? %>
-    <%= link_to 'Login', login_path, class: "btn btn-primary btn-lg btn-block" %>  <%= link_to 'Signup', new_user_path, class: "btn btn-primary btn-lg btn-block"%>
+    <%= link_to 'Login', login_path, class: "btn btn-primary " %>  <%= link_to 'Signup', new_user_path, class: "btn btn-primary "%>
   <% else %>
     <p>
       <h3><strong>Welcome, <%= link_to @current_user.name, user_path(@current_user) %> |

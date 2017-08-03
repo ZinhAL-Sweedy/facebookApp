@@ -31,8 +31,20 @@ class UsersController < ApplicationController
 
   if params[:name].present?
         @user = User.where(name:params[:name]).first
+        # @user = User.where(name: "Matt Edge")
 
         redirect_to user_path(@user.id)
+    end
+  end
+  def searchPost
+    raise 'hell'
+    if params[:title].present?
+        @post = Post.where(title:params[:title]).first
+
+        # @user = User.where(name: "study post")
+
+
+        redirect_to post_path(@post.id)
     end
   end
   def follow

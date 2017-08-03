@@ -6,8 +6,12 @@
   <div class="row">
     <div class="col-md-4">
       <div id="profile-resume" class="card">
-        <%#= image_tag('/assets/background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
-        <img src="/assets/background-images-13.jpeg" class="card-img-top img-responsive">
+        <%= image_tag('/assets/bg.jpeg' , class: "left card-img-top img-responsive" )%>
+        <!-- <img src="/assets/"+rand(1..10)}.jpg" class="card-img-top img-responsive"> -->
+
+        <!-- <%= image_tag "" %> -->
+
+  <!-- <% puts "#{/assets/}#{rand(1..2)}.jpg"%> -->
         <div class="card-block">
           <%= cl_image_tag(@user.image , class: "card-img" )%>
           <p4 class="card-title"><%=@user.name%>
@@ -43,7 +47,7 @@
             <div class="input-group">
               <!-- <input type="text" class="form-control" placeholder="What is happening?"> -->
 
-              <div class="search_form  ">
+              <div class="search_form  rechercheProduit">
                 <%= form_tag("/searchPost", method: "get") do %>
                 <%= label_tag(:title, "") %>
                 <%= text_field_tag(:title,:"", placeholder: "Search Post", :class => 'searchfield') %>
@@ -52,6 +56,15 @@
                 <% end %>
 
               </div>
+
+              <div class="search_form rechercheProduit">
+               <%= form_tag("/searchUser", method: "get") do %>
+               <%= label_tag(:name, "") %>
+               <%= text_field_tag(:name,:"", placeholder: "Search user", :class => 'searchfield') %>
+               <!-- <%= image_submit_tag("search", :class => 'mag')%> -->
+                 <%= image_submit_tag("http://res.cloudinary.com/zinh/image/upload/v1501744579/search_axyv9e.jpg",:width=>60, :height=>30, :class => 'mag')%>
+               <% end %>
+
               <!-- <span class="input-group-addon">
                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
               </span> -->
@@ -181,7 +194,7 @@
     </h3>
     <ol>
       <% @user.friended.each do |u| %>
-      <li><%= link_to u.name,  user_path(u.id), class:"btn btn-primary" %><%= link_to image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %>
+      <li><%= link_to u.name,  user_path(u.id), class:"btn btn-primary" %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %>
       </li>
 
       <% end %>
@@ -196,7 +209,7 @@
       <% @user.liked_comments.each do |u| %>
 
       comment title:
-      <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %></li>
+      <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %></li>
 
       <% end %>
 
@@ -210,7 +223,7 @@
     <ol>
       <% @user.liked_posts.each do |u| %>
 
-      post title:<li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %></li>
+      post title:<li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %></li>
 
       <% end %>
     </ol>

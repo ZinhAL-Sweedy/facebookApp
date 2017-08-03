@@ -28,7 +28,7 @@
         <td class="info"><%= comment.user_id %></td>
         <td class="info"><%= comment.post_id %></td>
         <td class="info"><%= comment.content %></td>
-        <td class="info"><%= image_tag(comment.image, :alt => "comment image")%> </td>
+        <td class="info"><%= cl_image_tag(comment.image, :alt => "comment image")%> </td>
 
         <td><%= link_to 'Show', comment, class:"btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment), class:"btn btn-info" %></td>

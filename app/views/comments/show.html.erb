@@ -21,7 +21,8 @@
 
 <% if @comment.image.present? %>
     <%= cl_image_tag( @comment.image,
-    :width=>400, :aspect_ration=>"2.5", :crop=>"crop" )%>
+    :width=>400, :aspect_ration=>"2.5", :crop=>"crop" )%>  <td class="info">
+
 <% end %>
 </p>
 <br>

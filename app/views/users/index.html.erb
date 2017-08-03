@@ -8,7 +8,6 @@
 
 <h1>Users List</h1>
 
-<!-- <table> -->
   <thead>
     <tr class="info table table-hove">
 
@@ -24,23 +23,17 @@
   <tbody>
 
 <!-- <ol> -->
-  <% @users.each do |u| %>
-    <li>
-      <%= link_to u.name, user_path(u.id) %>
-    </li>
-  <% end %>
-<!-- </ul> -->
+  <% @users.each do |user| %>
+  <tr>
 
 
-<tr>
 
-  <td class="info"><%= post.title %></td>
-  <td class="info"><%= post.user_id %></td>
-  <td class="info"><%= post.content %></td>
-  <td class="info"><%= image_tag(post.image, :alt => "user image")%> </td>
-  <td class="info"><%= link_to 'Show', post, class:"btn btn-info"  %></td>
-  <td class="info"><%= link_to 'Edit', edit_post_path(post), class:"btn btn-info"  %></td>
-  <td class="info"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-info" %></td>
+  <td class="info"><%= user.name %></td>
+  <td class="info"><%= user.email%></td>
+  <td class="info"><%= cl_image_tag(user.image, :alt => "post image")%> </td>
+  <td class="info"><%= link_to 'Show',user, class:"btn btn-info"  %></td>
+  <td class="info"><%= link_to 'Edit', edit_user_path(user), class:"btn btn-info"  %></td>
+  <td class="info"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-info" %></td>
 </tr>
 <% end %>
 </tbody>

@@ -11,13 +11,12 @@ class PostsController < ApplicationController
 
 
   def searchPost
-
-  # if params[:title].present?
     raise 'hell'
+  if params[:title].present?
         @post = Post.where(title:params[:title]).first
         # raise 'hell'
-        redirect_to user_path(@post.id)
-    # end
+        redirect_to post_path(@post.id)
+    end
   end
   def like
     @post = Post.find(params[:id])

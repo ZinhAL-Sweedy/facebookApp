@@ -1,11 +1,11 @@
-<h2><strong><u>Login<strong><u></h2>
-
+<!-- <h2><strong><u>Login<strong><u></h2> -->
+  <!-- <%= link_to 'Login', login_path, class: "btn btn-primary " %>  <%= link_to 'Signup', new_user_path, class: "btn btn-primary" %> -->
 <% if flash[:error].present? %>
   <p><strong> <%= flash[:error] %> </strong></p>
 <% end %>
 
 <%= form_tag login_path do %>
-  
+
   <%= label_tag 'Email' %>
   <%= email_field_tag :email, nil %>
   <br>
