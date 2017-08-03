@@ -377,7 +377,9 @@ body {
     font-weight: bold;
     color: #2F92CA;
 }
-
+ol {
+  list-style: none;
+}
 form#new-message {
     border-radius: 0.4rem 0.4rem 0 0;
     padding: 1em;

@@ -27,16 +27,14 @@ class UsersController < ApplicationController
   #   end
   # end
 
+  def searchUser
 
-    def searchUser
-      @user = User.find(params[:name])
+  if params[:name].present?
+        @user = User.where(name:params[:name]).first
 
-      #  if params[:search].present?
-        @user = User.where(name: 'matty' )
-        redirect_to "/users/#{ @user.id }"
-      # end
+        redirect_to user_path(@user.id)
+    end
   end
-
   def follow
     @post = Post.find(params[:id])
     @current_user.follow!(@post)

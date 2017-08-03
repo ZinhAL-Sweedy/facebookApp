@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 puts 'Loading Users...'
-u1 = User.create email: 'politisj@gmail.com' , name: 'John Politis' ,  password: 'chicken', age: '43' ,is_admin:true
+u1 = User.create email: 'politisj@gmail.com' , name: 'John Politis' ,  password: 'chicken', age: '43' ,is_admin:true, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg"
 u2 = User.create email: 'matty@gmail.com' , name: 'Matt Edge' ,        password: 'chicken', age: '25', is_admin:false
 u3 = User.create email: 'textchimp@gmail.com' , name: 'Luke Hammer' ,        password: 'chicken', age: '20', is_admin:false
 u4 = User.create email: 'cry@gmail.com' , name: 'Luke Hammer' ,        password: 'chicken', age: '40', is_admin:false
 
 Post.destroy_all
 puts 'Loading Posts....'
-p1 = Post.create title: 'fisrt post', content: 'testing post1'
+p1 = Post.create title: 'fisrt post', content: 'testing post1', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg'
 
-p2 = Post.create title: 'second post', content: 'testing post2'
-p3 = Post.create title: 'third post', content: 'testing post3'
-p4 = Post.create title: 'fourth post', content: 'testing post4'
+p2 = Post.create title: 'second post', content: 'testing post2', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg'
+p3 = Post.create title: 'third post', content: 'testing post3', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg'
+p4 = Post.create title: 'fourth post', content: 'testing post4', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg'
 
 
 Comment.destroy_all

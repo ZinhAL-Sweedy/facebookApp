@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="webapp.html">
-                <%= image_tag("/assets/logo.png" , class: "img-responsive" ) %>
+                <%= image_tag("/assets/facebooklogo.png" , class: "img-responsive" ) %>
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -44,7 +44,7 @@
                 </button>
 
                 <button type="button" class="btn btn-default dropdown-togglethumbnail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= image_tag("/assets/.png" ) %>
+                    <%= image_tag( @current_user.image ) %>
                 </button>
 
                 <ul class="dropdown-menu">
@@ -59,15 +59,20 @@
                     <% end %>
                 </ul>
             </div>
-            <form id="search" role="search" class="hidden-sm">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search user"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                     <!-- searchUser -->
+
                 </div>
-            </form>
+
+                <div class="search_form">
+                <%= form_tag("/searchUser", method: "get") do %>
+                <%= label_tag(:name, "") %>
+                <%= text_field_tag(:name,:"", placeholder: "Search user", :class => 'searchfield') %>
+                <%= image_submit_tag("search", :class => 'mag')%>
+
+     <% end %>
+
         </div>
     </div>
-</nav>555
+</nav>
 
 <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

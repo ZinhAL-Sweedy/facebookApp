@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/searchUser' => 'users#searchUser'
   get '/comments/like/:id' => 'comments#like'
   get '/comments/unlike/:id' => 'comments#unlike'
   get '/comments/follow/:id' => 'comments#follow'
