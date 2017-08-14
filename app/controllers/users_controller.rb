@@ -32,24 +32,37 @@ class UsersController < ApplicationController
   if params[:name].present?
         @user = User.where(name:params[:name]).first
         # @user = User.where(name: "Matt Edge")
+        if @user
 
         redirect_to user_path(@user.id)
+      else
+
+        redirect_to users_path
+
     end
   end
+  end
   def searchPost
-    raise 'hell'
+    # raise 'hell'
     if params[:title].present?
         @post = Post.where(title:params[:title]).first
 
         # @user = User.where(name: "study post")
 
-
+        if @post
         redirect_to post_path(@post.id)
+      else
+        redirect_to comments_path
     end
   end
+  end
   def follow
-    @post = Post.find(params[:id])
-    @current_user.follow!(@post)
+    # @post = Post.find(params[:id])
+    @user = User.find(params[:id])
+    if @user != @current_user
+      @current_user.follow!(@user)
+      redirect_to user_path(@current_user.id)
+    end
     redirect_to user_path(@current_user.id)
   end
   #

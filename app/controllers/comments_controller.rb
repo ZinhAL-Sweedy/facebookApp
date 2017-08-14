@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   end
   #
   def unfolow
-    @commentt = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     # if @current_user.likees(@comment)
     @current_user.unfollow!(@comment)
     # end

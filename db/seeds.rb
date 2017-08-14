@@ -56,10 +56,9 @@ u1.posts << p4
 u1.posts << p5
 u1.posts << p6
 u1.posts << p7
-u1.posts << p8
-u1.posts << p9
-u1.posts << p10
-
+u2.posts << p8
+u2.posts << p9
+u2.posts << p10
 
 
 

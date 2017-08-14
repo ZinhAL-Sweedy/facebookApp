@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Things to add
+make the front end more nicer
+upload sound video
+make it look like the real FB
+put pagination on all pages
+even with posts and comments
+refactor my code
+arrange the buttons
+get the links to work follow and like
+remove the dead code
+and polish it for final present
