@@ -48,7 +48,7 @@
 </ol>
 <br> -->
 <% if @current_user.follows?(@post) %>
-  <%= link_to "unfollow", ("/posts/unfolow/" + @post.id.to_s) %>
+  <%= link_to "unfollow", ("/posts/unfollow/" + @post.id.to_s) %>
 <% else %>
 
   <%= link_to "follow", ("/posts/follow/" + @post.id.to_s) %>

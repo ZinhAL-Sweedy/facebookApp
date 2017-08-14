@@ -12,7 +12,23 @@
           <p4 class="card-title"><%=@user.name%>
             <small><%=@user.email%></small>
           </p4>
+          <br><br><br><br><br>
+          <p>
+            <h3>Users
+              <%=@user.name%>
+              has friended:
+            </h3>
+            <hr>
+            <ol>
+              <% @user.friended.each do |u| %>
+              <li><%= link_to u.name,  user_path(u.id),class:"btn btn-default" %></li>
+             <%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"4", height:"4" %>
+              </li>
+              <% end %>
+            </ol>
 
+            <hr>
+          </p>
           <ul class="list-inline list-unstyled">
         </div>
       </div>
@@ -141,28 +157,34 @@
 
     </div>
     <div class="col-md-4">
-   <h3>
-     <%= link_to "follow this user", follow_user_path(@user) %></h3>
+   <!-- <h3>
+     <%= link_to "Follow This User", follow_user_path(@user) %></h3>
+     <hr>
      <ol>
        <% @user.followees(User).each do |u| %>
        <li><%= link_to u.name,  user_path(u.id) %></li>
+       <%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"1", height:"1" %>
+
        <% end %>
      </ol>
 
-   <hr>
-   <h3>Users
+   <hr> -->
+   <!-- <h3>Users
      <%=@user.name%>
      has friended:
    </h3>
+   <hr>
    <ol>
      <% @user.friended.each do |u| %>
      <li><%= link_to u.name,  user_path(u.id) %></li>
+    <%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"4", height:"4" %>
+     </li>
      <% end %>
    </ol>
 
-   <hr>
+   <hr> -->
 
-   <h3>Users who have friended
+   <!-- <h3>Users who have friended
      <%=@user.name%>:
    </h3>
    <ol>
@@ -173,21 +195,21 @@
      <% end %>
    </ol>
 
-   <hr>
-   <h3>Comments
+   <hr> -->
+   <h3>Comments that
      <%=@user.name%>
-     likes:
-   </h3>
+     Likes:
+   </h3><hr>
    <ol>
      <% @user.liked_comments.each do |u| %>
 
-     comment title:
-     <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-primary" %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %></li>
+     <!-- comment title: -->
+     <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-default" %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"1", height:"1" %></li>
 
      <% end %>
 
    </ol>
-   <%= link_to "All Comments" , comments_path, class:"btn btn-primary" %>
+   <!-- <%= link_to "All Comments" , comments_path, class:"btn btn-primary" %> -->
 
    <h2>Posts
      <%=@user.name%>
@@ -196,7 +218,7 @@
    <ol>
      <% @user.liked_posts.each do |u| %>
 
-     post title:<li><%= link_to u.title,  post_path(u.id), class:"btn btn-primary"  %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"304", height:"236" %></li>
+     post title:<li><%= link_to u.title,  post_path(u.id), class:"btn btn-default"  %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"1", height:"1" %></li>
 
      <% end %>
    </ol>
@@ -205,9 +227,9 @@
 
    <!-- <%= link_to "ALl Comments" , comments_path, class:"btn btn-primary" %> -->
 
-   <%= link_to "Find Friends", users_path, class:"btn btn-primary"%>
+   <!-- <%= link_to "Find Friends", users_path, class:"btn btn-primary"%>
    <br><br>
-   <%= link_to "All Users", users_path, class:"btn btn-primary"%>
+   <%= link_to "All Users", users_path, class:"btn btn-primary"%> -->
  </div>
 </div>
 

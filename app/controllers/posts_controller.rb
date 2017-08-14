@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     redirect_to user_path(@current_user.id)
   end
   #
-  def unfolow
+  def unfollow
     @post = Post.find(params[:id])
     # if @current_user.likees(@comment)
     @current_user.unfollow!(@post)

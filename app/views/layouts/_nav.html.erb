@@ -28,7 +28,9 @@
                   <!-- <%= image_submit_tag("search", :class => 'mag')%> -->
                     <%= image_submit_tag("http://res.cloudinary.com/zinh/image/upload/v1501744579/search_axyv9e.jpg",:width=>60, :height=>30, :class => 'mag')%>
                   <% end %>
-</li>
+</li>&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to "All Users", users_path, class:"btn btn-default"%>
+
                 <!-- <li>
                     <a href="#">
                         <span class="badge">5</span>
@@ -81,7 +83,8 @@
         </div>
     </div>
 </nav>
-
+<!-- <%= link_to "Find Friends", users_path, class:"btn btn-primary"%> -->
+<!-- <br><br> -->
 <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -113,6 +116,7 @@
                        <%= f.submit nil, class: "btn btn-primary" , value: "Save"%>
                     </div>
                   <% end %>
+
         </div>
     </div>
 </div>

@@ -22,15 +22,16 @@ class CommentsController < ApplicationController
     redirect_to user_path(@current_user.id)
   end
 
+
   def follow
     @comment = Comment.find(params[:id])
     @current_user.follow!(@comment)
     redirect_to user_path(@current_user.id)
   end
   #
-  def unfolow
+  def unfollow
     @comment = Comment.find(params[:id])
-    # if @current_user.likees(@comment)
+    # if @current_user.followees(@comment)
     @current_user.unfollow!(@comment)
     # end
     redirect_to user_path(@current_user.id)
@@ -47,7 +48,7 @@ class CommentsController < ApplicationController
   end
 
 
-  def admin_index
+  def index
     @comments = Comment.all
   end
   # GET /comments/1
