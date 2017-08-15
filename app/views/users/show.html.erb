@@ -53,7 +53,8 @@
             <li>
               <%= cl_image_tag(post.image , class: 'feed-avatar img-circle') %>
               <div class="feed-post">
-                <h4><%= post.title%>
+                <h4><%= link_to post.title, post_path(post.id)%>
+
                 <small>&nbsp; by:
                   <%=@user.name%>
                 </small>
@@ -204,7 +205,8 @@
      <% @user.liked_comments.each do |u| %>
 
      <!-- comment title: -->
-     <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-default" %><%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"1", height:"1" %></li>
+     <li><%= link_to u.title,  comment_path(u.id), class:"btn btn-default" %>
+       <%= link_to cl_image_tag(u.image),user_path(u.id),  class:"img-rounded", width:"1", height:"1" %></li>
 
      <% end %>
 
